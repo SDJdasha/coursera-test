@@ -73,4 +73,7 @@ p {
 	.col-md-6{
 		width: 50%;
 	}
+	.last-one {
+		width: 100%;
+	}
 }
