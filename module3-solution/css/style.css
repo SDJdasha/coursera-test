@@ -1,0 +1,48 @@
+
+.navbar-brand h1 {
+  font-size: 1.5em;   
+  margin-top: 0;
+  margin-bottom: 0;
+  line-height: .75;
+}
+
+#nav-list {  
+  color: black;
+  background-color: #FFFFE0;
+}
+#nav-list a:hover {
+  background: #E7E7E7;
+}
+
+.menu-content{
+  background-color: #DFDFDF;
+}
+.menu-content p{
+  height: 2000px;
+  line-height: 20px;
+  margin: 20px;
+}
+.menu-content h3{
+  padding-top: 15px;
+}
+
+/*mobile*/
+@media (min-width: 576px) {
+  .container-sm, .container {
+    max-width: 540px;
+  }
+}
+
+/*tablet*/
+@media (min-width: 768px) {
+  .container-md, .container-sm, .container {
+    max-width: 720px;
+  }
+}
+
+/*desktop*/
+@media (min-width: 992px) {
+  .container-lg, .container-md, .container-sm, .container {
+    max-width: 960px;
+  }
+}
