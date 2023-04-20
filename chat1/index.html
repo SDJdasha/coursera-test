@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Instant Messaging App</title>
+  <!-- 引入 Bootstrap CSS -->
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+  <!-- 引入自定义 CSS 文件（可选） -->
+  <link href="styles.css" rel="stylesheet">
+</head>
+<body>
+  <!-- 这里放置应用程序的 HTML 结构 -->
+
+  <!-- 引入 jQuery -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <!-- 引入 Bootstrap JS -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <!-- 引入自定义 JS 文件 -->
+  <script src="app.js"></script>
+  <!-- 引入虚拟的 JavaScript 文件 -->
+  <script src="mock-data.js"></script>
+  <script src="mock-api.js"></script>
+
+  <!-- 登陆界面 -->
+<div id="login-container" class="container">
+  <h2>登录</h2>
+  <form id="login-form">
+    <div class="form-group">
+      <label for="username">用户名：</label>
+      <input type="text" class="form-control" id="username" required>
+    </div>
+    <div class="form-group">
+      <label for="password">密码：</label>
+      <input type="password" class="form-control" id="password" required>
+    </div>
+    <button type="submit" class="btn btn-primary">登录</button>
+    <button type="button" class="btn btn-secondary" id="guest-login">游客模式</button>
+  </form>
+</div>
+
+<!-- 联系人页面（默认隐藏） -->
+<div id="contacts-container" class="container" style="display:none;">
+  <!-- 功能区 -->
+  <div id="function-area" class="d-flex justify-content-between">
+    <button class="btn btn-info">我</button>
+    <button class="btn btn-info">发布状态</button>
+    <button class="btn btn-info">添加好友</button>
+  </div>
+  <!-- 联系人列表 -->
+  <div id="contacts-list">
+  <!--联系人添加后的样子
+  <div class="contact" data-user-id="${friend.id}">
+        <img src="${friend.avatar}" alt="${friend.nickname}">
+        <span class="contact-name">${friend.nickname}</span>
+        ${friend.status ? `<div class="status${friend.isTopic ? ' topic' : ''}" data-topic-id="${friend.topicId || ''}">${friend.status}</div>` : ''}
+  </div>
+  -->
+  <!-- More contacts -->
+</div>
+
+</div>
+
+<!-- 个人资料页面（默认隐藏） -->
+<div id="profile-container" class="container" style="display:none;">
+  <h2>个人资料</h2>
+  <form id="profile-form">
+    <div class="form-group">
+      <label for="nickname">昵称：</label>
+      <input type="text" class="form-control" id="nickname" required>
+    </div>
+    <button type="submit" class="btn btn-primary">保存</button>
+  </form>
+  <div id="current-status">
+    <!-- 在这里显示当前发布的状态 -->
+  </div>
+  <button class="back-to-contacts">返回联系人页面</button>
+</div>
+
+<!-- 发布状态页面（默认隐藏） -->
+<div id="post-status-container" class="container" style="display:none;">
+  <h2>发布状态</h2>
+  <form id="post-status-form">
+    <div class="form-group">
+      <label for="status-content">状态内容：</label>
+      <textarea class="form-control" id="status-content" rows="3" required></textarea>
+    </div>
+    <div class="form-check">
+      <input class="form-check-input" type="checkbox" id="is-topic">
+      <label class="form-check-label" for="is-topic">发布为话题</label>
+    </div>
+    <button type="submit" class="btn btn-primary">发布</button>
+  </form>
+  <button class="back-to-contacts">返回联系人页面</button>
+</div>
+
+<!-- 添加好友页面（默认隐藏） -->
+<div id="add-friend-container" class="container" style="display:none;">
+  <h2>添加好友</h2>
+  <form id="add-friend-form">
+    <div class="form-group">
+      <label for="search-username">搜索用户：</label>
+      <input type="text" class="form-control" id="search-username" required>
+    </div>
+    <button type="submit" class="btn btn-primary">搜索</button>
+  </form>
+  <div id="search-result">
+    <!-- 在这里显示搜索结果 -->
+  </div>
+  <button class="back-to-contacts">返回联系人页面</button>
+</div>
+
+ <!-- 对话窗口（默认隐藏） -->
+<div id="chat-container" class="container" style="display:none;">
+  <div id="normal-chat-container" class="container" style="display:none;">
+  <h2>对话窗口</h2>  
+  <div id="messages" class="messages">
+    <!-- 在这里动态添加聊天消息 -->
+  </div>  
+</div>
+
+
+<!-- Topic Chat Window -->
+<div id="topic-chat-container" style="display:none;">
+  <h2>话题（临时群）</h2>
+  <div id="topic-messages" class="messages">
+    <!-- Topic messages will be appended here -->
+  </div>  
+</div>
+<form id="send-message-form">
+    <div class="form-group">
+      <label for="message">消息：</label>
+      <textarea class="form-control" id="message" rows="1" required></textarea>
+    </div><br> 
+    <button type="submit" class="btn btn-primary">发送</button>
+    <a href="#" class="back-to-contacts">返回</a>
+  </form>
+</div>
+
+
+
+</body>
+</html>
